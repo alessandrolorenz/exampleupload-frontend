@@ -20,6 +20,8 @@ class App extends Component {
 
  async componentDidMount() {
    const response = await api.get('posts');
+   console.log(response.data);
+   
 
    this.setState({
      uploadedFiles: response.data.map(file => ({
@@ -36,7 +38,7 @@ class App extends Component {
 
  //receb np Uload comp a props.handleUpload
  handleUpload = files => { 
-   const uploadedFiles = files.map(file => ({
+   const uploadedFiles = files.map(file => ({ //retornando um obj 
      file,
      id: uniqueId(),
      name: file.name,
@@ -49,7 +51,7 @@ class App extends Component {
     }))
     
     this.setState({
-      uploadedFiles: this.state.uploadedFiles.concat(uploadedFiles)
+      uploadedFiles: this.state.uploadedFiles.concat(uploadedFiles) // anexar e nao sobrescrever/sobrepor o estado
     });
     //processar um c processe 2 c
     uploadedFiles.forEach(this.processUpload);
@@ -64,7 +66,7 @@ class App extends Component {
 
   processUpload = (uploadedFile) => {
     const data = new FormData(); // como se estivesse dando um submit de um form pelo javascript
-    // é como se fosse o objeto que o html tranforma os campos do form dentro do js 
+    // é como se fosse o objeto que o html tranforma os campos do form dentro do js (criar novos campos)
     data.append('file', uploadedFile.file, uploadedFile.name); // manda na requisição
     //cria o campo 'file', e envia o file e o nome  
     api.post('posts', data, {
@@ -99,7 +101,7 @@ class App extends Component {
   }
 
   componentWillUnmount() {
-    this.uploadedFiles.forEach(file => URL.revokeObjectURL(file.preview));
+    this.state.uploadedFiles.forEach(file => URL.revokeObjectURL(file.preview));
   }
 
   render(){
@@ -108,7 +110,7 @@ class App extends Component {
     <Container>
       <Content>
         <Upload onUpload={this.handleUpload} />
-       { !!uploadedFiles.length && (
+       { !!uploadedFiles.length && ( //!!para retornar true ou false o invez de 0 e -1
           <FileList files={uploadedFiles} onDelete={this.handleDelete} />
        ) }
       </Content>
