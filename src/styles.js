@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div `
 /* tudo centralizado */
+  margin-top: 80px;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -17,9 +18,10 @@ export const Content = styled.div `
   border-radius: 4px;
   padding: 20px;
 
-  h1 {
+  h2 {
     margin-bottom: 25px;
     color: #4682B4;
+    text-align: center;
   }
 
 `;

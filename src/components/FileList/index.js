@@ -9,7 +9,7 @@ import { Container, FileInfo, Preview } from './styles';
 const FileList = ({files, onDelete}) => (
   <Container>
     {files.map(uploadedFile => (      
-      <li key={uploadedFile.id}>
+      <li key={uploadedFile.id} >
 
         <Preview src={uploadedFile.preview} />
       <FileInfo>

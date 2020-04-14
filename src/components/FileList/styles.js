@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.ul`
   margin-top: 20px;
+
   
   div {
     display: flex;
@@ -16,6 +17,9 @@ export const Container = styled.ul`
     justify-content: space-around;
     align-items: center;
     color: #444;
+    border-radius:10px;
+    background-color: #F0F8FF;
+    box-shadow: #444;
 
     & + li {
       margin-top: 15px;

@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { uniqueId } from 'lodash';
 import filesize from 'filesize';
 
+import 'bootstrap/dist/css/bootstrap.css';
+import Header from './components/Header'
+
 import api from './services/api'
 
 import GlobalStyle from './styles/global'
@@ -105,10 +108,12 @@ class App extends Component {
   render(){
     const { uploadedFiles } = this.state;
   return (
+    <>
+      <Header/>
     <Container>
       <Content>
       <div>
-        <h1>Repositório de fotos AWS</h1>
+        <h2>Repositório de fotos AWS</h2>
       </div>
         <Upload onUpload={this.handleUpload} />
 
@@ -119,6 +124,8 @@ class App extends Component {
       </Content>
       <GlobalStyle />
     </Container>
+    
+    </>
 
     
   );
