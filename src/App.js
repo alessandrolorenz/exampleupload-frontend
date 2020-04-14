@@ -19,9 +19,7 @@ class App extends Component {
  };
 
  async componentDidMount() {
-   const response = await api.get('posts');
-   console.log(response.data);
-   
+   const response = await api.get('posts');   
 
    this.setState({
      uploadedFiles: response.data.map(file => ({
@@ -109,9 +107,14 @@ class App extends Component {
   return (
     <Container>
       <Content>
+      <div>
+        <h1>Repositório de fotos AWS</h1>
+      </div>
         <Upload onUpload={this.handleUpload} />
+
        { !!uploadedFiles.length && ( //!!para retornar true ou false o invez de 0 e -1
           <FileList files={uploadedFiles} onDelete={this.handleDelete} />
+
        ) }
       </Content>
       <GlobalStyle />

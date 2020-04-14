@@ -12,7 +12,8 @@ export const Container = styled.ul`
 
   li {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     color: #444;
 
@@ -24,7 +25,8 @@ export const Container = styled.ul`
 
 export const FileInfo = styled.div`
   display: flex;
-
+  flex-direction: row;
+  
   div {
     display: flex;
     flex-direction: column;
@@ -48,8 +50,8 @@ export const FileInfo = styled.div`
 `;
 
 export const Preview = styled.img`
-  width: 36px;
-  height: 36px;
+  width: 150px;
+  height: 150px;
   border-radius: 5px;
   background-image: url(${props => props.src });
   background-repeat:no-repeat;

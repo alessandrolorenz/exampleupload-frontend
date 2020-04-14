@@ -16,4 +16,10 @@ export const Content = styled.div `
   background: #FFF;
   border-radius: 4px;
   padding: 20px;
+
+  h1 {
+    margin-bottom: 25px;
+    color: #4682B4;
+  }
+
 `;
