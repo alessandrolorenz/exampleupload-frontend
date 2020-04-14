@@ -61,5 +61,5 @@ export const Preview = styled.img`
   background-repeat:no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-  margin-right: 10px;
+  margin-top: 15px;
 `;
