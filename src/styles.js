@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Container = styled.div `
 /* tudo centralizado */
-  margin-top: 90px;
   height: 100%;
   display: flex;
   justify-content: center;
