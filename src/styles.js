@@ -13,7 +13,7 @@ export const Container = styled.div `
 export const Content = styled.div `
 /* tudo centralizado */
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
   margin: 30px;
   background: #FFF;
   border-radius: 4px;
