@@ -3,7 +3,8 @@ import { uniqueId } from 'lodash';
 import filesize from 'filesize';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import Header from './components/Header'
+import Header from './components/Header';
+import Text01 from './components/Text01';
 
 import api from './services/api'
 
@@ -111,6 +112,7 @@ class App extends Component {
     <>
       <Header/>
     <Container>
+      <Text01 />
       <Content>
       <div>
         <h2>Repositório de fotos AWS</h2>
