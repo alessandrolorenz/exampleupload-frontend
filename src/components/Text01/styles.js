@@ -4,7 +4,7 @@ export const Paragraph = styled.p`
     margin-top: 20px;
     color: #fff;
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
     text-indent: 2em;
     text-align: left;
 
